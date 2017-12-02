@@ -2,9 +2,6 @@ package trie;
 
 import java.util.HashMap;
 
-/**
- * Created by shumishra on 6/10/17.
- */
 public class Trie {
     private TrieNode root;
 

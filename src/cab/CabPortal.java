@@ -2,9 +2,6 @@ package cab;
 
 import java.util.*;
 
-/**
- * Created by shumishra on 8/6/17.
- */
 public class CabPortal {
     Map<String, City> cities = new HashMap<>();
     Map<String, Cab> cabs = new HashMap<>();
@@ -146,16 +143,6 @@ public class CabPortal {
         flipKartCab.registerCab(cab);
         System.out.println(flipKartCab.cabs.size());
         System.out.println("registration done");
-
-
-
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         System.out.println(" -----------");
         System.out.println("Testing Booking a Cab");
         String originID = "city_2";

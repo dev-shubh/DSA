@@ -2,9 +2,6 @@ package trie;
 
 import java.util.HashMap;
 
-/**
- * Created by shumishra on 6/10/17.
- */
 public class TrieNode {
     private char value;
     private HashMap<Character, TrieNode> children;

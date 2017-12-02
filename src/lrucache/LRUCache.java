@@ -2,30 +2,42 @@ package lrucache;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-/*You are required to complete below class */
-public class LRUCache {
+public class LRUCache<K, V> implements Cache{
 
-    int cacheSize;
-    HashMap<Integer, Page> cache = new HashMap();  // Hashmap of page Number and Page.
-    LinkedList<Integer> list;
+    private final int size;
+    private final HashMap<K, V> cache;  // Hashmap of page Number and Page.
+    private final LinkedList<K> list;
 
     public LRUCache(int cacheSize) {
-        if (cacheSize > 0) this.cacheSize = cacheSize;
+        if (cacheSize > 0) {
+            this.size = cacheSize;
+            this.cache = new HashMap<K, V>(cacheSize);
+            this.list = new LinkedList<K>();
+        }
         else throw new RuntimeException("Unable to create Cache, given size should be more than 0.");
     }
 
-    /*Returns the value of the key x if
-         present else returns -1 */
-    public int get(int x) {
-        if (cache.containsKey(x)) {
-            return (int) cache.get(x);
+    @Override
+    public int getSize() {
+        return this.size;
+    }
+
+    @Override
+    public Object get(Object key) {
+        if (cache.containsKey(key)) { // if the page is already cached, make it the the most recently page in list.
+            V value = cache.get(key);
+            list.remove(key);
+            list.add((K) key);
+            return value;
         }
+        else{
+
+        }
+        return null;
     }
 
-    /*Sets the key x with value y in the LRU cache */
-    public void set(int x, int y) {
-        //Your code here
+    @Override
+    public void insert(Object key, Object value) {
+
     }
-
-
 }
