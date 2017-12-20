@@ -76,7 +76,7 @@ public class TestLCA {
 
         if(root.data == n) return true;
 
-        if(path(root.left, n, path_n) == true || path(root.right, n, path_n) == true) {
+        if(path(root.left, n, path_n) || path(root.right, n, path_n)) {
             path_n.add(root.data);
             return true;
         }

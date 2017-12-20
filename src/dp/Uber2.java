@@ -4,9 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * Created by shumishra on 12/1/17.
- */
 public class Uber2 {
 
     public static void main(String args[] ) throws Exception {

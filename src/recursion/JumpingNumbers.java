@@ -29,16 +29,12 @@ public class JumpingNumbers {
     }
 
     public static void main(String[] args) {
-        String ss = "\"";
-        int x = (-1) % 10;
-        System.out.println(x);
         int limit = 100000;
         ArrayList<Integer> answer = new ArrayList<>();
         answer.add(0);
         for(int i=1; i < 10; i++) {
             JumpingNumbers jumpingNumbers = new JumpingNumbers();
             if(i < limit) {
-
                 jumpingNumbers.jNumbers.add(i);
                 jumpingNumbers.findJumpingNumbers(i, limit);
             }

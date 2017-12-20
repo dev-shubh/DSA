@@ -1,8 +1,5 @@
 package strings;
 
-/**
- * Created by shumishra on 11/25/17.
- */
 public class MinDeleteSuchThatTwoStringsAreSame {
 
     public int minDistance(String word1, String word2) {

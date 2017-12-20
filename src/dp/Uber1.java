@@ -2,9 +2,6 @@ package dp;
 
 import java.util.*;
 
-/**
- * Created by shumishra on 12/1/17.
- */
 public class Uber1 {
 
     static class Point implements Comparable<Point>{

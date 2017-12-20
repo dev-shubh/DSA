@@ -2,9 +2,6 @@ package dp;
 
 import java.util.Scanner;
 
-/**
- * Created by shumishra on 12/1/17.
- */
 public class Pizza {
 
     public static void main (String[] args) {
