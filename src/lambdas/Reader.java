@@ -15,7 +15,7 @@ public class Reader {
     public static String processFileBadWay() throws IOException {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("/Users/shumishra/Projects/DSA/src/lambdas/data.txt"));
-            return bufferedReader.readLine();
+            return bufferedReader.readLine(); // readLine reads a single line.
         }
         catch (Exception e) {
 
