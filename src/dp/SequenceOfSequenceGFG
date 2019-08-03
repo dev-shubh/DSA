@@ -1,0 +1,45 @@
+package dp;
+
+import java.util.Scanner;
+
+//Solution to https://practice.geeksforgeeks.org/problems/sequence-of-sequence/0
+public class SequenceOfSequenceGFG {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int t = scanner.nextInt();
+		for (int i = 0; i < t; i++) {
+			int m = scanner.nextInt();
+			int n = scanner.nextInt();
+			System.out.println(solve(m, n));
+		}
+	}
+
+	private static int solve(int m, int n) {
+		int[][] ans = new int[m+1][n+1];
+		for (int i = 0; i <= m; i++) {
+			ans[i] = new int[n+1];
+			for (int j = 0; j <=n; j++) {
+				ans[i][j] = 0;
+			}
+		}
+		for (int i = 1; i <= m; i++) {
+			ans[i][1] = i;
+		}
+		for (int currentN = 2; currentN <= n; currentN++) {
+			for (int currentM = 1; currentM <= m; currentM++) {
+				int minValuePossible = (int) Math.pow(2D, (currentN - 1));
+				if (currentM < minValuePossible) {
+					ans[currentM][currentN] = 0;
+					continue;
+				}
+				int ansWithLowerMvalues = ans[currentM-1][currentN];
+				int ansWithLowerNvalues = ans[currentM/2][currentN-1];
+				ans[currentM][currentN] = ansWithLowerMvalues + ansWithLowerNvalues;
+			}
+		}
+		return ans[m][n];
+	}
+
+
+}
